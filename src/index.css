@@ -1,0 +1,26 @@
+:root {
+  /*Light Colors*/
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+  /*Dark Colors*/
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDenaturedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlueDark: hsl(234, 39%, 85%);
+  --LightGrayishBlueLight: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+  /*Fonts*/
+  --HeadingDesktop: 40px;
+  --BodyCopy1: 18px;
+  --BodyCopy2: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: var(--BodyCopy);
+}

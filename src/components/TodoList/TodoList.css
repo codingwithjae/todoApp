@@ -1,0 +1,21 @@
+
+.todoList {
+  position: relative;
+  top: -100px;
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--BodyCopy2);
+  background-color: white;
+  border-radius: 5px;
+  width: 327px;
+  height: 368px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 75px 150px -50px var(--LightGrayishBlueDark);
+}
+
+ul {
+  list-style-type: none;
+}

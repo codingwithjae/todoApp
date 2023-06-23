@@ -1,0 +1,28 @@
+
+  .itemContainers {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .xIcon {
+    position: relative;
+    right: -220px;
+    top: -25px;
+    width: 11.79px;
+    height: 11.79px;
+  }
+
+  .itemText {
+    position: relative;
+    left: -25px;
+  }
+
+  .checkIcon {
+    position: relative;
+    right: 50px;
+    top: 25px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: solid 1px var(--VeryDarkGrayishBlue);
+  }
