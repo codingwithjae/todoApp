@@ -8,6 +8,8 @@ function TodoList({ children }) {
           {children}
         </ul>
       </div>
+      <span className='itemsCount'><p>5 items left</p></span>
+      <span className='clearItems'><p>Clear completed</p></span>
     </section>
   );
 }

@@ -38,12 +38,19 @@
     display: none;
   }
 
+  .desktopHero {
+    position: relative;
+    top: -20px;
+    width: 100%;
+    z-index: -1;
+  }
+
   .headerContainerDesktop {
     display: block;
   }
 
   .headerContainer__title {
-    top: 80px;
+    top: 35px;
     left: 430px;
     font-size: var(--HeadingDesktop);
   }

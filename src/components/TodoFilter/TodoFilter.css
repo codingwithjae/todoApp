@@ -1,10 +1,9 @@
-
 .footerFilterContainer {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: var(--White);
   position: relative;
   top: -80px;
   margin: 0 20px;
@@ -29,10 +28,42 @@
 }
 
 .footerSubContainerFour {
+  position: relative;
+  top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .footerFilterContainer {
+    top: -160px;
+    right: -410px;
+    font-size: var(--BodyCopy2);
+  }
+
+  .footerSubContainerOne {
+    left: 100px;
+  }
+  
+  .footerSubContainerTwo {
+    position: relative;
+    left: 30px;
+  }
+  
+  .footerSubContainerThree {
+    position: relative;
+    right: 50px;
+  }
+  
+  .footerSubContainerFour {
     position: relative;
     top: -40px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0px 20px;
+  }
+  
 }
