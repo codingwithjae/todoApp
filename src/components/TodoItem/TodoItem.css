@@ -24,6 +24,7 @@
   height: 10px;
   border-radius: 50%;
   border: solid 1px var(--VeryDarkGrayishBlue);
+  color: red;
 }
 
 @media only screen and (min-width: 1200px) {
