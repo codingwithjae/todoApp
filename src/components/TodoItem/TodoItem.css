@@ -18,13 +18,10 @@
 
 .checkIcon {
   position: relative;
-  right: 50px;
-  top: 25px;
+  right: 52px;
+  top: 20px;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  border: solid 1px var(--VeryDarkGrayishBlue);
-  color: red;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -48,7 +45,5 @@
     position: relative;
     right: 100px;
     top: 25px;
-    width: 24px;
-    height: 24px;
   }
 }

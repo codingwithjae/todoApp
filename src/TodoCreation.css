@@ -1,0 +1,57 @@
+:root {
+  /*Light Colors*/
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+  /*Dark Colors*/
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDenaturedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlueDark: hsl(234, 39%, 85%);
+  --LightGrayishBlueLight: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+  /*Fonts*/
+  --BodyCopy1: 18px;
+  --BodyCopy2: 12px;
+}
+
+.todoCreation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 327px;
+  height: 48px;
+  top: -130px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+input {
+  margin-right: 100px;
+  color: var(--VeryLightGray);
+  font-weight: 400;
+  letter-spacing: -0.1;
+  font-size: var(--BodyCopy2);
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.checkIconHeader {
+  position: relative;
+  left: -12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: solid 1px var(--VeryDarkGrayishBlue);
+}

@@ -3,7 +3,7 @@ import { Header } from './components/Header/Header';
 import { TodoCreation } from './components/TodoCreation/TodoCreation';
 import { TodoList } from './components/TodoList/TodoList';
 import { TodoItem } from './components/TodoItem/TodoItem';
-import { TodoFilter } from './components/TodoFilter/TodoFilter';
+import { TodoFilter } from './TodoFilter/TodoFilter';
 
 const defaultTodo = [
   { text: 'Complete online JavaScript course', completed: true },
