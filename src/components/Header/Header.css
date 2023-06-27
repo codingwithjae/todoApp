@@ -29,6 +29,10 @@
   z-index: -1;
 }
 
+.desktopHero {
+  display: none;
+}
+
 .headerContainerDesktop {
   display: none;
 }
@@ -39,10 +43,11 @@
   }
 
   .desktopHero {
+    display: block;
     position: relative;
-    top: -20px;
+    top: -160px;
     width: 100%;
-    z-index: -1;
+    height: 300px;
   }
 
   .headerContainerDesktop {
@@ -50,22 +55,31 @@
   }
 
   .headerContainer__title {
-    top: 35px;
-    left: 430px;
+    top: 15px;
+    left: 360px;
     font-size: var(--HeadingDesktop);
-  }
-
-  .headerContainer__title :nth-child(1) {
-    position: relative;
-    left: -120px;
-    top: 25px;
+    z-index: 1;
+    height: auto;
+    width: 540px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .headerContainer__title :nth-child(2) {
     width: 35.11px;
     height: 36px;
-    position: relative;
-    left: 120px;
-    top: 23px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .headerContainer__title {
+    left: 420px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .headerContainer__title {
+    left: 520px;
   }
 }

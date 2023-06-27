@@ -16,11 +16,11 @@ function Header() {
 
       <section className="headerContainerDesktop">
         <div className="headerContainer__title">
-          <h1>T O D O</h1>
-          <img className='moonIcon' src={moonIcon} alt="moonIcon" />
+          <span><h1>T O D O</h1></span>
+          <span><img className='moonIcon' src={moonIcon} alt="moonIcon" /></span>
         </div>
-        <img className='desktopHero' src={desktopHeaderHero} alt="desktopForMobile" />
       </section>
+      <img className='desktopHero' src={desktopHeaderHero} alt="desktopForMobile" />
     </header>
   );
 }

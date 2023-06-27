@@ -1,11 +1,32 @@
+import React, { useState } from 'react';
 import './TodoCreation.css';
-import checkIcon from'../../assets//icon-check.svg';
 
-function TodoCreation() {
+function TodoCreation({ addTodo }) {
+  const [newTodo, setNewTodo] = useState('');
+
+  const handleInputChange = (event) => {
+    setNewTodo(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      addTodo(newTodo);
+      setNewTodo('');
+    }
+  };
+
   return (
     <div className="todoCreation">
-      <span><img className='checkIconHeader' src={checkIcon} alt="checkIcon" /></span>
-      <input className='placeholder' placeholder="Create a new todo..." />
+      <span className='circleIcon'></span>
+      <input
+        type="text"
+        id="taskInput"
+        value={newTodo}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        placeholder="Create a new todo..."
+      />
     </div>
   );
 }

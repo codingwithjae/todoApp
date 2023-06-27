@@ -1,49 +1,102 @@
 .itemContainers {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  height: 44px;
+  position: relative;
+  top: -12px;
+  border-bottom: 1px solid var(--LightGrayishBlueDark);
 }
 
-.xIcon {
+.iconCheck {
+  width: 7.25px;
+  height: 6px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: left;
+  width: 70%;
+}
+
+.iconCheckContainer {
+  border-radius: 50%;
+  border: var(--LightGrayishBlueDark) solid 1px;
+  width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
   position: relative;
-  right: -220px;
-  top: -25px;
+  right: -15px;
+}
+
+.iconCheckContainer--Active {
+  border: none;
+  background: rgb(85, 221, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(85, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+  height: 16.5px;
+  width: 16.5px;
+}
+
+.itemTextP--Completed {
+  text-decoration: line-through;
+  color: var(--LightGrayishBlueDark);
+}
+
+.deleteIcon {
+  position: relative;
+  right: 20px;
   width: 11.79px;
   height: 11.79px;
 }
 
-.itemText {
-  position: relative;
-  left: -25px;
-}
-
-.checkIcon {
-  position: relative;
-  right: 52px;
-  top: 20px;
-  width: 10px;
-  height: 10px;
-}
-
 @media only screen and (min-width: 1200px) {
+  .itemContainers {
+    top: -16px;
+    width: 538px;
+    height: 64px;
+  }
 
-  .xIcon {
+  .deleteIcon {
     position: relative;
-    right: -350px;
-    top: -55px;
+    right: 20px;
     width: 18px;
     height: 18px;
   }
 
-  .itemText {
-    position: relative;
-    left: -45px;
-    top: -16px;
-    font-size: var(--BodyCopy1);
+  .iconCheckContainer {
+    height: 24px;
+    width: 24px;
+    right: -15px;
   }
 
-  .checkIcon {
+  .iconCheckContainer--Active {
+    height: 26.5px;
+    width: 26.5px;
+  }
+
+  .iconCheck {
+    scale: 1.6;
     position: relative;
-    right: 100px;
-    top: 25px;
+    top: 0.5px;
+    left: 0.5px;
+  }
+
+  .iconCheckContainer {
+    left: 22px;
   }
 }

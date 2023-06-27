@@ -1,17 +1,21 @@
+import React from 'react';
+import xIcon from '../../assets/icon-cross.svg';
+import iconCheck from '../../assets/icon-check.svg';
 import './TodoItem.css';
-import xIcon from '../../assets//icon-cross.svg';
-import { BsFillCheckCircleFill } from "react-icons/bs";
 
 function TodoItem(props) {
   return (
-    <div className='itemsContainers'>
-      <li>
-        
-        <p className='itemText'>{props.text}</p>
-        <span><img className='xIcon' src={xIcon} alt="xIcon" /></span>
-      </li>
-
-    </div>
+    <li className='itemContainers'>
+      <span className={`iconCheckContainer ${props.completed && "iconCheckContainer--Active"}`} onClick={props.onComplete}><img className='iconCheck' src={iconCheck} alt='checkIcon' /></span>
+      <span className='textContainer'>
+        <p className={`itemTextP ${props.completed && "itemTextP--Completed"}`}>
+          {props.text}
+        </p>
+      </span>
+      <span>
+        <img className='deleteIcon' src={xIcon} alt="xIcon" onClick={props.onDelete} />
+      </span>
+    </li>
   );
 }
 

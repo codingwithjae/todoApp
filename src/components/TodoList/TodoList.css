@@ -1,36 +1,25 @@
 .todoList {
   position: relative;
   top: -100px;
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: var(--BodyCopy2);
   background-color: var(--White);
   border-radius: 5px;
-  width: 327px;
-  height: 400px;
+  width: 325px;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0px 75px 150px -50px var(--LightGrayishBlueDark);
-}
-
-.itemsCount {
-  position: relative;
-  top: -5px;
-  z-index: 1;
-}
-
-.clearItems {
-  position: relative;
-  top: -42px;
-  left: 170px;
-  width: 120px;
-  z-index: 1;
+  box-shadow: 0px 75px 150px 0px var(--LightGrayishBlueDark);
 }
 
 ul {
-  list-style-type: none;
+  position: relative;
+  right: 20px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -38,19 +27,8 @@ ul {
     font-size: var(--BodyCopy1);
     background-color: var(--White);
     width: 540px;
-    height: 639px;
-  }
-
-  .itemsCount {
-    left: -55px;
-    top: 14px;
-    font-size: var(--BodyCopy2);
-  }
-
-  .clearItems {
-    position: relative;
-    top: -22px;
-    left: 320px;
-    font-size: var(--BodyCopy2);
+    height: auto;
+    top: -270px;
+    z-index: 1;
   }
 }

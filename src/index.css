@@ -14,14 +14,17 @@
   --DarkGrayishBlue: hsl(234, 11%, 52%);
   --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
   --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+  --FiltersActiveColors:  #3a7cfd;
   /*Fonts*/
   --HeadingDesktop: 40px;
   --BodyCopy1: 18px;
   --BodyCopy2: 12px;
+  --BodyCopy3: 14px;
 }
 
 body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   font-size: var(--BodyCopy);
+  color: var(--VeryDarkGrayishBlue);
 }
