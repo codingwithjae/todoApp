@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { Header } from './components/Header/Header';
 import { TodoCreation } from './components/TodoCreation/TodoCreation';
 import { TodoList } from './components/TodoList/TodoList';
@@ -6,10 +6,15 @@ import { TodoItem } from './components/TodoItem/TodoItem';
 import { TodoFilter } from './components/TodoFilter/TodoFilter';
 import { TodoCounter } from './components/TodoCounter/TodoCounter';
 
+export const ThemeContext = createContext({
+  theme: 'light',
+  toggleTheme: () => { }
+});
+
 const defaultTodos = [
   { text: 'Complete online JavaScript course', completed: true },
-  { text: 'Jog around the park 3x', completed: true },
-  { text: 'Read for 1 hour', completed: true },
+  { text: 'Jog around the park 3x', completed: false },
+  { text: 'Read for 1 hour', completed: false },
   { text: 'Pick up groceries', completed: false },
   { text: 'Complete Todo App on Frontend Mentor', completed: false },
 ];
@@ -63,23 +68,32 @@ function App() {
     setFilteredTodos(newTodos);
   };
 
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <>
-      <Header />
-      <TodoCreation addTodo={addTodo} />
-      <TodoList>
-        {filteredTodos.map((todo, index) => (
-          <TodoItem
-            key={index} 
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-        <TodoCounter remaining={remainingTodos} clear={clearCompleted} applyFilter={handleFilterChange} />
-      </TodoList>
-      <TodoFilter applyFilter={handleFilterChange} />
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className='App' id={theme}>
+          <Header />
+          <TodoCreation addTodo={addTodo} />
+          <TodoList>
+            {filteredTodos.map((todo, index) => (
+              <TodoItem
+                key={index}
+                text={todo.text}
+                completed={todo.completed}
+                onComplete={() => completeTodo(todo.text)}
+                onDelete={() => deleteTodo(todo.text)}
+              />
+            ))}
+            <TodoCounter remaining={remainingTodos} clear={clearCompleted} applyFilter={handleFilterChange} />
+          </TodoList>
+          <TodoFilter applyFilter={handleFilterChange} />
+        </div>
+      </ThemeContext.Provider>
     </>
   );
 }

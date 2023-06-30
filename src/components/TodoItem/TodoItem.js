@@ -6,9 +6,14 @@ import './TodoItem.css';
 function TodoItem(props) {
   return (
     <li className='itemContainers'>
-      <span className={`iconCheckContainer ${props.completed && "iconCheckContainer--Active"}`} onClick={props.onComplete}><img className='iconCheck' src={iconCheck} alt='checkIcon' /></span>
+      <span
+        className={`iconCheckContainer ${props.completed ? "iconCheckContainer--Active" : ""}`}
+        onClick={props.onComplete}
+      >
+        {props.completed && <img className='iconCheck' src={iconCheck} alt='checkIcon' />}
+      </span>
       <span className='textContainer'>
-        <p className={`itemTextP ${props.completed && "itemTextP--Completed"}`}>
+        <p className={`itemTextP ${props.completed ? "itemTextP--Completed" : ""}`}>
           {props.text}
         </p>
       </span>

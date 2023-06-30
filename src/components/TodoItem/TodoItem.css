@@ -21,6 +21,7 @@
   justify-content: left;
   text-align: left;
   width: 70%;
+  cursor: grab;
 }
 
 .iconCheckContainer {
@@ -38,6 +39,7 @@
   height: 15px;
   position: relative;
   right: -15px;
+  cursor: pointer;
 }
 
 .iconCheckContainer--Active {
@@ -62,6 +64,7 @@
   right: 20px;
   width: 11.79px;
   height: 11.79px;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1200px) {

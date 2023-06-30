@@ -14,7 +14,7 @@
   --DarkGrayishBlue: hsl(234, 11%, 52%);
   --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
   --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
-  --FiltersActiveColors:  #3a7cfd;
+  --FiltersActiveColors: #3a7cfd;
   /*Fonts*/
   --HeadingDesktop: 40px;
   --BodyCopy1: 18px;
@@ -22,9 +22,108 @@
   --BodyCopy3: 14px;
 }
 
+* {
+  pointer-events: auto;
+}
+
 body {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
   font-size: var(--BodyCopy);
   color: var(--VeryDarkGrayishBlue);
+}
+
+#light {
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+}
+
+/*Dark Mode Colors*/
+
+.switch {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  background-image: none;
+}
+
+#dark {
+  background-color: var(--VeryDarkBlue);
+}
+
+#dark .todoCreation {
+  background-color: var(--VeryDarkGrayishBlue);
+  color: var(--LightGrayishBlueDark);
+}
+
+#dark .headerContainer__title {
+  z-index: 1;
+}
+
+#dark .todoList {
+  background-color: var(--VeryDarkGrayishBlue);
+  color: var(--LightGrayishBlueDark);
+  box-shadow: 0px 75px 150px 0px var(--VeryDarkDenaturedBlue);
+}
+
+#dark .mobileHero {
+  display: none;
+}
+
+#dark .mobileHeroDark {
+  display: block;
+  top: -20px;
+  width: 100%;
+  z-index: 0;
+}
+
+#dark .todoCounter {
+  background-color: var(--VeryDarkGrayishBlue);
+}
+
+#dark .sunIcon {
+  display: block;
+}
+
+#dark .moonIcon {
+  display: none;
+}
+
+#dark .footerFilterContainer {
+  background-color: var(--VeryDarkGrayishBlue);
+  color: var(--LightGrayishBlueDark);
+}
+
+#dark .footerSubContainerFour {
+  color: var(--LightGrayishBlueDark);
+}
+
+#dark .itemContainers {
+  color: var(--LightGrayishBlueDark);
+}
+
+#dark .itemTextP--Completed {
+  color: var(--DarkGrayishBlue);
+}
+
+@media only screen and (min-width: 1200px) {
+  #dark .mobileHeroDark {
+    display: none;
+  }
+
+  #dark .desktopHero {
+    display: none;
+  }
+
+  #dark .desktopHeroDark {
+    display: block;
+    position: relative;
+    top: -160px;
+    width: 100%;
+    height: 300px;
+  }
+
+  #dark .sunIcon {
+    display: block;
+    z-index: 1;
+  }
 }

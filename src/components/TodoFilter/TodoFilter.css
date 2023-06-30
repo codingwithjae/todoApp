@@ -17,16 +17,19 @@
 .footerSubContainerOne {
   position: relative;
   width: 50px;
+  cursor: pointer;
 }
 
 .footerSubContainerTwo {
   position: relative;
   width: 50px;
+  cursor: pointer;
 }
 
 .footerSubContainerThree {
   position: relative;
   width: 120px;
+  cursor: pointer;
 }
 
 .footerSubContainerFour {

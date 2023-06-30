@@ -13,11 +13,13 @@
   z-index: 1;
   position: relative;
   width: 150px;
+  cursor: pointer;
 }
 
 .clearItems {
   z-index: 1;
   width: 150px;
+  cursor: pointer;
 }
 
 .counterContainerDesktop {

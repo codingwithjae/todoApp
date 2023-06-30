@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  pointer-events: auto;
 }
 
 .headerContainer__title {
@@ -17,6 +18,17 @@
   color: var(--VeryLightGray);
 }
 
+.sunIcon {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.moonIcon {
+  cursor: pointer;
+  user-select: none;
+}
+
 .headerContainer__title :nth-child(2) {
   width: 19.32px;
   height: 20px;
@@ -29,7 +41,21 @@
   z-index: -1;
 }
 
+.mobileHeroDark {
+  position: relative;
+  top: -20px;
+  width: 100%;
+  z-index: -1;
+  display: none;
+  user-select: none;
+}
+
 .desktopHero {
+  display: none;
+  user-select: none;
+}
+
+.desktopHeroDark {
   display: none;
 }
 
@@ -64,6 +90,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .moonIcon {
+    position: relative;
+    left: 140px;
   }
 
   .headerContainer__title :nth-child(2) {
