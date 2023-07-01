@@ -34,8 +34,6 @@ Your users should be able to:
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2puaHZmMmhpOHU5aGJ2M2k0cnBxN3R2YWV6ZWF1M29oYzk1MDI5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vKqiAXEN9iQciNMwls/giphy.gif" alt="Screenshot"/>
 </p>
 
-![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2puaHZmMmhpOHU5aGJ2M2k0cnBxN3R2YWV6ZWF1M29oYzk1MDI5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vKqiAXEN9iQciNMwls/giphy.gif)
-
 ## My process
 
 ### Built with
