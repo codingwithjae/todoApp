@@ -12,14 +12,14 @@ function TodoItem(props) {
       >
         {props.completed && <img className='iconCheck' src={iconCheck} alt='checkIcon' />}
       </span>
-      <span className='textContainer'>
+      <button className='textContainer'>
         <p className={`itemTextP ${props.completed ? "itemTextP--Completed" : ""}`}>
           {props.text}
         </p>
-      </span>
-      <span>
+      </button>
+      <button>
         <img className='deleteIcon' src={xIcon} alt="xIcon" onClick={props.onDelete} />
-      </span>
+      </button>
     </li>
   );
 }

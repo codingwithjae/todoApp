@@ -17,7 +17,7 @@ function TodoCreation({ addTodo }) {
   };
 
   return (
-    <div className="todoCreation">
+    <form className="todoCreation">
       <span className='circleIcon'></span>
       <input
         type="text"
@@ -27,7 +27,7 @@ function TodoCreation({ addTodo }) {
         onKeyDown={handleKeyDown}
         placeholder="Create a new todo..."
       />
-    </div>
+    </form>
   );
 }
 

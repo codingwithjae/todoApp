@@ -62,7 +62,7 @@ body {
 #dark .todoList {
   background-color: var(--VeryDarkGrayishBlue);
   color: var(--LightGrayishBlueDark);
-  box-shadow: 0px 75px 150px 0px var(--VeryDarkDenaturedBlue);
+  box-shadow: none;
 }
 
 #dark .mobileHero {

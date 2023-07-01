@@ -10,6 +10,10 @@
   border-bottom: 1px solid var(--LightGrayishBlueDark);
 }
 
+button {
+  all: unset;
+}
+
 .iconCheck {
   width: 7.25px;
   height: 6px;

@@ -18,21 +18,21 @@ function Header() {
   return (
     <header>
       <section className="headerContainerMobile">
-        <div className="headerContainer__title">
+        <button className="headerContainer__title">
           <h1>T O D O</h1>
           <img className='moonIcon' src={moonIcon} alt="moonIcon" onClick={handleModeToggle} />
           <img className='sunIcon' src={sunIcon} alt="sunIcon" onClick={handleModeToggle} />
-        </div>
+        </button>
         <img className='mobileHero' src={mobileHeaderHero} alt="heroForMobile" />
         <img className='mobileHeroDark' src={mobileHeaderHeroDark} alt="heroForMobile" />
       </section>
 
       <section className="headerContainerDesktop">
-        <div className="headerContainer__title">
+        <button className="headerContainer__title">
           <span><h1>T O D O</h1></span>
           <span><img className='moonIcon' src={moonIcon} alt="moonIcon" onClick={handleModeToggle} /></span>
           <span><img className='sunIcon' src={sunIcon} alt="sunIcon" onClick={handleModeToggle} /></span>
-        </div>
+        </button>
       </section>
       <img className='desktopHero' src={desktopHeaderHero} alt="desktopForMobile" />
       <img className='desktopHeroDark' src={desktopHeaderHeroDark} alt="desktopForMobile" />

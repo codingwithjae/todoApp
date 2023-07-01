@@ -5,6 +5,7 @@ import { TodoList } from './components/TodoList/TodoList';
 import { TodoItem } from './components/TodoItem/TodoItem';
 import { TodoFilter } from './components/TodoFilter/TodoFilter';
 import { TodoCounter } from './components/TodoCounter/TodoCounter';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 export const ThemeContext = createContext({
   theme: 'light',
@@ -12,20 +13,21 @@ export const ThemeContext = createContext({
 });
 
 const defaultTodos = [
-  { text: 'Complete online JavaScript course', completed: true },
-  { text: 'Jog around the park 3x', completed: false },
-  { text: 'Read for 1 hour', completed: false },
-  { text: 'Pick up groceries', completed: false },
-  { text: 'Complete Todo App on Frontend Mentor', completed: false },
+  { id: '1', text: 'Complete online JavaScript course', completed: true },
+  { id: '2', text: 'Jog around the park 3x', completed: false },
+  { id: '3', text: 'Read for 1 hour', completed: false },
+  { id: '4', text: 'Pick up groceries', completed: false },
+  { id: '5', text: 'Complete Todo App on Frontend Mentor', completed: false },
 ];
 
 function App() {
   const [todos, setTodos] = useState(defaultTodos);
   const [filteredTodos, setFilteredTodos] = useState(defaultTodos);
 
-  const completeTodo = (text) => {
+  // Marks a todo as completed or not completed
+  const completeTodo = (id) => {
     const newTodos = todos.map((todo) => {
-      if (todo.text === text) {
+      if (todo.id === id) {
         return { ...todo, completed: !todo.completed };
       }
       return todo;
@@ -35,12 +37,14 @@ function App() {
     setFilteredTodos(newTodos);
   };
 
-  const deleteTodo = (text) => {
-    const newTodos = todos.filter((todo) => todo.text !== text);
+  // Deletes a todo from the list
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
     setFilteredTodos(newTodos);
   };
 
+  // Handles the filter change for displaying todos
   const handleFilterChange = (filter) => {
     if (filter === 'all') {
       setFilteredTodos(todos);
@@ -51,8 +55,9 @@ function App() {
     }
   };
 
+  // Adds a new todo to the list
   const addTodo = (text) => {
-    const newTodo = { text: text, completed: false };
+    const newTodo = { id: Date.now().toString(), text: text, completed: false };
     const newTodos = [...todos, newTodo];
     setTodos(newTodos);
     setFilteredTodos(newTodos);
@@ -62,6 +67,7 @@ function App() {
   const totalTodos = todos.length;
   const remainingTodos = totalTodos - completedTodos;
 
+  // Clears all completed todos from the list
   const clearCompleted = () => {
     const newTodos = todos.filter((todo) => !todo.completed);
     setTodos(newTodos);
@@ -73,27 +79,55 @@ function App() {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
+  // Handles the end of a drag-and-drop operation
+  const onDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const items = [...filteredTodos];
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setFilteredTodos(items);
+  };
+
   return (
     <>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <div className='App' id={theme}>
-          <Header />
-          <TodoCreation addTodo={addTodo} />
-          <TodoList>
-            {filteredTodos.map((todo, index) => (
-              <TodoItem
-                key={index}
-                text={todo.text}
-                completed={todo.completed}
-                onComplete={() => completeTodo(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-              />
-            ))}
-            <TodoCounter remaining={remainingTodos} clear={clearCompleted} applyFilter={handleFilterChange} />
-          </TodoList>
-          <TodoFilter applyFilter={handleFilterChange} />
-        </div>
-      </ThemeContext.Provider>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <div className='App' id={theme}>
+            <Header />
+            <TodoCreation addTodo={addTodo} />
+
+            <TodoList>
+              {/* Provides a droppable area for the todo list */}
+              <Droppable droppableId="todo-list">
+                {(provided) => (
+                  <div {...provided.droppableProps} ref={provided.innerRef}>
+                    {/* Renders each todo item as a draggable component */}
+                    {filteredTodos.map((todo, index) => (
+                      <Draggable key={todo.id} draggableId={todo.id} index={index}>
+                        {(provided) => (
+                          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                            <TodoItem
+                              text={todo.text}
+                              completed={todo.completed}
+                              onComplete={() => completeTodo(todo.id)}
+                              onDelete={() => deleteTodo(todo.id)}
+                            />
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+              <TodoCounter remaining={remainingTodos} clear={clearCompleted} applyFilter={handleFilterChange} />
+            </TodoList>
+            <TodoFilter applyFilter={handleFilterChange} />
+          </div>
+        </ThemeContext.Provider>
+      </DragDropContext>
     </>
   );
 }
