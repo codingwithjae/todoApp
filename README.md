@@ -1,6 +1,6 @@
 # Frontend Mentor Challenge - To-do App
 
-![Design preview for the Todo app coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Todo app coding challenge](public/desktop-preview.jpg)
 
 ## Overview
 
@@ -31,12 +31,12 @@ Your users should be able to:
 ### Built with
 
 - React JS.
-- React beautiful drag and drop library.
-- Chat GPT 3 for some implementations and troubleshooting.
+- React beautiful drag-and-drop library.
+- Chat GPT-3 for some implementations and troubleshooting.
 
 ### What I learned
 
-- This is my first project using a JavaScript framework. It was difficult, since there are still basic JavaScript concepts that I am still learning. You can learn how to make a web app using a more professional environment, it was also great for learning how to use React libraries. I am very proud of the final result.
+- This is my first project using a JavaScript framework. It wasn't easy, since there are still basic JavaScript concepts that I am still learning. it was an excellent challenge for learning how to use React libraries and React concepts.
 
 ### What can be improve
 
@@ -45,3 +45,4 @@ Your users should be able to:
 ## Author
 
 - Frontend Mentor - [@jaegit123](https://www.frontendmentor.io/profile/jaegit123)
+- Check out my [portfolio](https://codingwithjae.dev/)
