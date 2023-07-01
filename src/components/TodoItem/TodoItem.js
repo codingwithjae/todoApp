@@ -6,17 +6,17 @@ import './TodoItem.css';
 function TodoItem(props) {
   return (
     <li className='itemContainers'>
-      <span
+      <button
         className={`iconCheckContainer ${props.completed ? "iconCheckContainer--Active" : ""}`}
         onClick={props.onComplete}
       >
         {props.completed && <img className='iconCheck' src={iconCheck} alt='checkIcon' />}
-      </span>
-      <button className='textContainer'>
+      </button>
+      <span className='textContainer'>
         <p className={`itemTextP ${props.completed ? "itemTextP--Completed" : ""}`}>
           {props.text}
         </p>
-      </button>
+      </span>
       <button>
         <img className='deleteIcon' src={xIcon} alt="xIcon" onClick={props.onDelete} />
       </button>

@@ -24,7 +24,6 @@ function App() {
   const [todos, setTodos] = useState(defaultTodos);
   const [filteredTodos, setFilteredTodos] = useState(defaultTodos);
 
-  // Marks a todo as completed or not completed
   const completeTodo = (id) => {
     const newTodos = todos.map((todo) => {
       if (todo.id === id) {
@@ -37,14 +36,12 @@ function App() {
     setFilteredTodos(newTodos);
   };
 
-  // Deletes a todo from the list
   const deleteTodo = (id) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
     setFilteredTodos(newTodos);
   };
 
-  // Handles the filter change for displaying todos
   const handleFilterChange = (filter) => {
     if (filter === 'all') {
       setFilteredTodos(todos);
@@ -55,7 +52,6 @@ function App() {
     }
   };
 
-  // Adds a new todo to the list
   const addTodo = (text) => {
     const newTodo = { id: Date.now().toString(), text: text, completed: false };
     const newTodos = [...todos, newTodo];
@@ -67,7 +63,6 @@ function App() {
   const totalTodos = todos.length;
   const remainingTodos = totalTodos - completedTodos;
 
-  // Clears all completed todos from the list
   const clearCompleted = () => {
     const newTodos = todos.filter((todo) => !todo.completed);
     setTodos(newTodos);
@@ -79,7 +74,6 @@ function App() {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  // Handles the end of a drag-and-drop operation
   const onDragEnd = (result) => {
     if (!result.destination) return;
 
@@ -99,11 +93,9 @@ function App() {
             <TodoCreation addTodo={addTodo} />
 
             <TodoList>
-              {/* Provides a droppable area for the todo list */}
               <Droppable droppableId="todo-list">
                 {(provided) => (
                   <div {...provided.droppableProps} ref={provided.innerRef}>
-                    {/* Renders each todo item as a draggable component */}
                     {filteredTodos.map((todo, index) => (
                       <Draggable key={todo.id} draggableId={todo.id} index={index}>
                         {(provided) => (

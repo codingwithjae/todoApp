@@ -27,31 +27,19 @@
 }
 
 body {
-  margin: 0;
+  margin: 0px;
   font-family: "Josefin Sans", sans-serif;
   font-size: var(--BodyCopy);
-  color: var(--VeryDarkGrayishBlue);
-}
-
-#light {
-  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
 }
 
 /*Dark Mode Colors*/
-
-.switch {
-  position: absolute;
-  top: 20px;
-  left: 200px;
-  background-image: none;
-}
 
 #dark {
   background-color: var(--VeryDarkBlue);
 }
 
 #dark .todoCreation {
-  background-color: var(--VeryDarkGrayishBlue);
+  background-color: var(--VeryDarkDenaturedBlue);
   color: var(--LightGrayishBlueDark);
 }
 
@@ -60,9 +48,17 @@ body {
 }
 
 #dark .todoList {
-  background-color: var(--VeryDarkGrayishBlue);
+  background-color: var(--VeryDarkDenaturedBlue);
   color: var(--LightGrayishBlueDark);
   box-shadow: none;
+}
+
+#dark .itemContainers {
+  border-bottom: 1px solid var(--VeryDarkGrayishBlue);
+}
+
+#dark .iconCheckContainer {
+  border: var(--VeryDarkGrayishBlue) solid 1px;
 }
 
 #dark .mobileHero {
@@ -90,7 +86,6 @@ body {
 
 #dark .footerFilterContainer {
   background-color: var(--VeryDarkGrayishBlue);
-  color: var(--LightGrayishBlueDark);
 }
 
 #dark .footerSubContainerFour {
@@ -102,7 +97,35 @@ body {
 }
 
 #dark .itemTextP--Completed {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+#dark .itemsCount,
+#dark .clearItems {
   color: var(--DarkGrayishBlue);
+}
+
+#dark .itemsCount:hover,
+#dark .clearItems:hover {
+  color: var(--LightGrayishBlueDark);
+}
+
+#dark .footerSubContainerOne,
+#dark .footerSubContainerTwo,
+#dark .footerSubContainerThree {
+  color: var(--DarkGrayishBlue);
+}
+
+#dark .footerSubContainerOne:hover,
+#dark .footerSubContainerTwo:hover,
+#dark .footerSubContainerThree:hover {
+  color: var(--LightGrayishBlueDark);
+}
+
+#dark .footerSubContainerOne:active,
+#dark .footerSubContainerTwo:active,
+#dark .footerSubContainerThree:active {
+  color: var(--FiltersActiveColors);
 }
 
 @media only screen and (min-width: 1200px) {
