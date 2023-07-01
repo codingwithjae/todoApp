@@ -28,7 +28,7 @@ Your users should be able to:
 
 - Live Site URL: [Github Pages](https://jaedevgithub.github.io/todoApp/)
 
-### Screenshot
+### Screenshot of my project
 
 <p align="center">
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2puaHZmMmhpOHU5aGJ2M2k0cnBxN3R2YWV6ZWF1M29oYzk1MDI5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vKqiAXEN9iQciNMwls/giphy.gif" alt="Screenshot"/>
@@ -54,3 +54,7 @@ Your users should be able to:
 
 - Frontend Mentor - [@jaegit123](https://www.frontendmentor.io/profile/jaegit123)
 - Check out my [portfolio](https://codingwithjae.dev/)
+
+## Credits
+
+- Dark mode tutorial that I use for this project [@PedroTech](https://www.youtube.com/watch?v=VzF2iTTc0MA&t=817s)
