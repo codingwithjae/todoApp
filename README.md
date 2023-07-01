@@ -1,6 +1,8 @@
-# Frontend Mentor Challenge - To-do App
+# Welcome to my To-do App! 👋
 
-![Design preview for the Todo app coding challenge](public/desktop-preview.jpg)
+This is a solution to the [To-do application](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
+
+Frontend Mentor challenges help to improve coding skills by building realistic projects.
 
 ## Overview
 
@@ -26,6 +28,10 @@ Your users should be able to:
 
 - Live Site URL: [Github Pages](https://jaedevgithub.github.io/todoApp/)
 
+### Screenshot
+
+![Alt Text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2puaHZmMmhpOHU5aGJ2M2k0cnBxN3R2YWV6ZWF1M29oYzk1MDI5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vKqiAXEN9iQciNMwls/giphy.gif)
+
 ## My process
 
 ### Built with
@@ -36,7 +42,7 @@ Your users should be able to:
 
 ### What I learned
 
-- This is my first project using a JavaScript framework. It wasn't easy, since there are still basic JavaScript concepts that I am still learning. it was an excellent challenge for learning how to use React libraries and React concepts.
+- This is my first project using a JavaScript framework. It wasn't easy, since there are still basic JavaScript concepts that I am still learning. it was an excellent challenge for learning how to use React libraries and React basics concepts.
 
 ### What can be improve
 
