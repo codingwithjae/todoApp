@@ -85,7 +85,8 @@ body {
 }
 
 #dark .footerFilterContainer {
-  background-color: var(--VeryDarkGrayishBlue);
+  background-color: var(--VeryDarkDenaturedBlue);
+  color: var(--VeryDarkGrayishBlue);
 }
 
 #dark .footerSubContainerFour {
