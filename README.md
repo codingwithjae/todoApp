@@ -44,7 +44,7 @@ Your users should be able to:
 
 ### What I learned
 
-- This is my first project using a JavaScript framework. It wasn't easy, since there are still basic JavaScript concepts that I am still learning. it was an excellent challenge for learning how to use React libraries and React basics concepts.
+- This is my first project using a JavaScript framework. It wasn't easy, since there are still basic JavaScript concepts that I am still learning. it was an excellent challenge for learning how to use React libraries and React basics concepts like hooks, custom hooks and local storage.
 
 ### What can be improve
 

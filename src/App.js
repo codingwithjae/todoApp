@@ -1,37 +1,17 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { Header } from './components/Header/Header';
+import { DarkMode } from './components/DarkMode/DarkMode';
 import { TodoCreation } from './components/TodoCreation/TodoCreation';
 import { TodoList } from './components/TodoList/TodoList';
 import { TodoItem } from './components/TodoItem/TodoItem';
 import { TodoFilter } from './components/TodoFilter/TodoFilter';
 import { TodoCounter } from './components/TodoCounter/TodoCounter';
+import { useLocalStorage } from './components/CustomHooks/LocalStorage';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 export const ThemeContext = createContext({
   theme: 'light',
-  toggleTheme: () => {},
+  toggleTheme: () => { },
 });
-
-function useLocalStorage(itemName, initialValue) {
-  const localStorageItem = localStorage.getItem(itemName);
-  let parsedItem;
-
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  } else {
-    parsedItem = JSON.parse(localStorageItem);
-  }
-
-  const [item, setItem] = useState(parsedItem);
-
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-}
 
 function App() {
   const [todos, setTodos] = useLocalStorage('Todos_V1', []);
@@ -102,7 +82,7 @@ function App() {
       <DragDropContext onDragEnd={onDragEnd}>
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
           <div className='App' id={theme}>
-            <Header />
+            <DarkMode />
             <TodoCreation addTodo={addTodo} />
 
             <TodoList>
