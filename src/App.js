@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { Header } from './components/Header/Header';
 import { TodoCreation } from './components/TodoCreation/TodoCreation';
 import { TodoList } from './components/TodoList/TodoList';
@@ -9,29 +9,37 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 export const ThemeContext = createContext({
   theme: 'light',
-  toggleTheme: () => { }
+  toggleTheme: () => {},
 });
 
-function App() {
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
 
-  const localStorageTodos = localStorage.getItem('Todos_V1');
-
-  let parsedItems;
-
-  if (!localStorageTodos) {
-    localStorage.setItem('Todos_V1', JSON.stringify([]));
-    parsedItems = [];
+  if (!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   } else {
-    parsedItems = JSON.parse(localStorageTodos);
+    parsedItem = JSON.parse(localStorageItem);
   }
 
-  const [todos, setTodos] = useState(parsedItems);
-  const [filteredTodos, setFilteredTodos] = useState(parsedItems);
+  const [item, setItem] = useState(parsedItem);
 
-  const saveTodos = (newTodos) => {
-    localStorage.setItem('Todos_V1', JSON.stringify(newTodos));
-    setTodos(newTodos);
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
   };
+
+  return [item, saveItem];
+}
+
+function App() {
+  const [todos, setTodos] = useLocalStorage('Todos_V1', []);
+  const [filteredTodos, setFilteredTodos] = useState(todos);
+
+  useEffect(() => {
+    setFilteredTodos(todos);
+  }, [todos]);
 
   const completeTodo = (id) => {
     const newTodos = todos.map((todo) => {
@@ -41,14 +49,12 @@ function App() {
       return todo;
     });
 
-    saveTodos(newTodos);
-    setFilteredTodos(newTodos);
+    setTodos(newTodos);
   };
 
   const deleteTodo = (id) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
-    saveTodos(newTodos);
-    setFilteredTodos(newTodos);
+    setTodos(newTodos);
   };
 
   const handleFilterChange = (filter) => {
@@ -64,8 +70,7 @@ function App() {
   const addTodo = (text) => {
     const newTodo = { id: Date.now().toString(), text: text, completed: false };
     const newTodos = [...todos, newTodo];
-    saveTodos(newTodos);
-    setFilteredTodos(newTodos);
+    setTodos(newTodos);
   };
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -74,8 +79,7 @@ function App() {
 
   const clearCompleted = () => {
     const newTodos = todos.filter((todo) => !todo.completed);
-    saveTodos(newTodos);
-    setFilteredTodos(newTodos);
+    setTodos(newTodos);
   };
 
   const [theme, setTheme] = useState('light');
