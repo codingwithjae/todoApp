@@ -12,17 +12,26 @@ export const ThemeContext = createContext({
   toggleTheme: () => { }
 });
 
-const defaultTodos = [
-  { id: '1', text: 'Complete online JavaScript course', completed: true },
-  { id: '2', text: 'Jog around the park 3x', completed: false },
-  { id: '3', text: 'Read for 1 hour', completed: false },
-  { id: '4', text: 'Pick up groceries', completed: false },
-  { id: '5', text: 'Complete Todo App on Frontend Mentor', completed: false },
-];
-
 function App() {
-  const [todos, setTodos] = useState(defaultTodos);
-  const [filteredTodos, setFilteredTodos] = useState(defaultTodos);
+
+  const localStorageTodos = localStorage.getItem('Todos_V1');
+
+  let parsedItems;
+
+  if (!localStorageTodos) {
+    localStorage.setItem('Todos_V1', JSON.stringify([]));
+    parsedItems = [];
+  } else {
+    parsedItems = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = useState(parsedItems);
+  const [filteredTodos, setFilteredTodos] = useState(parsedItems);
+
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('Todos_V1', JSON.stringify(newTodos));
+    setTodos(newTodos);
+  };
 
   const completeTodo = (id) => {
     const newTodos = todos.map((todo) => {
@@ -32,13 +41,13 @@ function App() {
       return todo;
     });
 
-    setTodos(newTodos);
+    saveTodos(newTodos);
     setFilteredTodos(newTodos);
   };
 
   const deleteTodo = (id) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
+    saveTodos(newTodos);
     setFilteredTodos(newTodos);
   };
 
@@ -55,7 +64,7 @@ function App() {
   const addTodo = (text) => {
     const newTodo = { id: Date.now().toString(), text: text, completed: false };
     const newTodos = [...todos, newTodo];
-    setTodos(newTodos);
+    saveTodos(newTodos);
     setFilteredTodos(newTodos);
   };
 
@@ -65,7 +74,7 @@ function App() {
 
   const clearCompleted = () => {
     const newTodos = todos.filter((todo) => !todo.completed);
-    setTodos(newTodos);
+    saveTodos(newTodos);
     setFilteredTodos(newTodos);
   };
 
