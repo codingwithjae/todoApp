@@ -33,12 +33,12 @@
 
 .footerSubContainerFour {
   position: relative;
-  top: -40px;
+  top: -150px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0px 20px;
-  height: 34vh;
+  height: 64vh;
 }
 
 .footerSubContainerFour p {
