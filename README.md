@@ -1,8 +1,6 @@
 # Welcome to my To-do App! 👋
 
-This is a solution to the [To-do application](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
-
-Frontend Mentor challenges help to improve coding skills by building realistic projects.
+This is a solution to the [To-do application](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) and a final project for the [React course from Platzi ](https://platzi.com/cursos/react/)
 
 ## Overview
 
